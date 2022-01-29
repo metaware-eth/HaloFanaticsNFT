@@ -1234,7 +1234,7 @@ contract Halo3Profile is ERC721Enumerable, ReentrancyGuard, Ownable {
         "Covenant Carbine",
         "Energy Sword",
         "Flamethrower",
-        "Fuel Rod Gun",
+        "Fuel Rod Cannon",
         "Gravity Hammer",
         "Machine Gun Turret",
         "Magnum",
@@ -1423,48 +1423,55 @@ contract Halo3Profile is ERC721Enumerable, ReentrancyGuard, Ownable {
     }
 
     function tokenURI(uint256 tokenId) override public view returns (string memory) {
-        string[19] memory parts;
-        parts[0] = '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 300 300"><style>.base { fill: black; font-family: serif; font-size: 14px; }</style><rect width="100%" height="100%" fill="#9B3332" /><text x="50%" y="20" class="base">';
+        string[22] memory parts;
+        parts[0] = '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 350 350">';
+        
+        parts[1] = '<defs><linearGradient id="MyGradient" x2="0%" y2="100%"><stop offset="33%" stop-color="#325992" /><stop offset="66%" stop-color="#9B3332" /></linearGradient></defs>';
+        
+        parts[2] = '<style>.base { fill: black; font-family: serif; font-size: 14px; }</style><rect width="100%" height="100%" fill="url(#MyGradient)" stroke="black" stroke-width="5" /><text x="10" y="20" class="base">';
 
-        parts[1] = getGamertag(tokenId);
+        parts[3] = getGamertag(tokenId);
 
-        parts[2] = '</text><text x="10" y="40" class="base">';
+        parts[4] = '</text><text x="10" y="40" class="base">';
 
-        parts[3] = getWeapon(tokenId);
+        parts[5] = getWeapon(tokenId);
 
-        parts[4] = '</text><text x="10" y="60" class="base">';
+        parts[6] = '</text><text x="10" y="60" class="base">';
 
-        parts[5] = getMap(tokenId);
+        parts[7] = getMap(tokenId);
 
-        parts[6] = '</text><text x="10" y="80" class="base">';
+        parts[8] = '</text><text x="10" y="80" class="base">';
 
-        parts[7] = getGametype(tokenId);
+        parts[9] = getGametype(tokenId);
 
-        parts[8] = '</text><text x="10" y="100" class="base">';
+        parts[10] = '</text><text x="10" y="100" class="base">';
 
-        parts[9] = getSpecies(tokenId);
+        parts[11] = getSpecies(tokenId);
 
-        parts[10] = '</text><text x="10" y="120" class="base">';
+        parts[12] = '</text><text x="10" y="120" class="base">';
 
-        parts[11] = getEquipment(tokenId);
+        parts[13] = getEquipment(tokenId);
 
-        parts[12] = '</text><text x="10" y="140" class="base">';
+        parts[14] = '</text><text x="10" y="140" class="base">';
 
-        parts[13] = getVehicle(tokenId);
+        parts[15] = getVehicle(tokenId);
 
-        parts[14] = '</text><text x="10" y="160" class="base">';
+        parts[16] = '</text><text x="10" y="160" class="base">';
 
-        parts[15] = getRank(tokenId);
+        parts[17] = getRank(tokenId);
 
-        parts[16] = '</text><text x="10" y="180" class="base">';
+        parts[18] = '</text><text x="10" y="180" class="base">';
 
-        parts[17] = getMedal(tokenId);
+        parts[19] = getMedal(tokenId);
 
-        parts[18] = '</text></svg>';
+        parts[20] = '</text><g transform="translate(250.000000,75.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"><path d="M337 683 c-9 -2 -15 -8 -12 -13 3 -5 -9 -12 -27 -15 -54 -12 -123 -51 -157 -90 -23 -26 -38 -36 -52 -32 -22 6 -24 -1 -5 -25 7 -10 26 -18 43 -18 26 0 31 5 36 29 15 71 171 128 327 118 142 -8 260 -69 260 -134 0 -36 -55 -86 -125 -113 -50 -19 -79 -23 -170 -23 -62 0 -123 5 -139 12 -24 10 -32 9 -48 -5 -25 -23 -15 -30 62 -44 36 -6 79 -16 96 -21 79 -24 237 0 326 48 53 29 108 84 108 108 0 11 12 15 40 15 26 0 40 5 40 13 0 9 -11 12 -35 9 -31 -4 -36 -1 -45 24 -25 66 -109 122 -222 149 -59 14 -258 19 -301 8z m68 -23 c-4 -6 -20 -10 -36 -10 -39 0 -30 14 10 17 18 1 29 -2 26 -7z m225 -5 c59 -8 175 -67 174 -88 -1 -8 4 -14 10 -11 6 2 18 -12 27 -31 15 -32 15 -36 -2 -54 -10 -10 -15 -21 -12 -24 3 -4 -2 -13 -11 -22 -9 -9 -16 -13 -16 -8 0 4 -7 -2 -15 -14 -8 -12 -29 -24 -45 -28 -17 -4 -30 -11 -30 -17 0 -6 -11 -8 -25 -6 -13 3 -22 2 -20 -2 7 -11 -100 -31 -175 -34 -38 -1 -54 18 -18 21 68 6 154 30 209 59 16 8 35 12 42 8 7 -4 9 -4 5 1 -11 11 12 36 25 28 6 -3 7 -1 3 5 -4 6 -2 21 5 33 17 32 -3 89 -40 114 -16 10 -27 23 -25 27 3 4 -3 5 -12 1 -14 -5 -16 -3 -10 13 5 14 4 16 -5 7 -9 -9 -22 -8 -58 3 -25 8 -77 17 -116 20 -38 4 -72 9 -75 11 -6 6 144 -3 210 -12z m-203 -319 c8 -8 -24 -6 -62 5 -26 7 -24 7 13 5 23 -2 46 -6 49 -10z"/></g>';
+        
+        parts[21] = '</svg>';
 
         string memory output = string(abi.encodePacked(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6], parts[7], parts[8]));
         output = string(abi.encodePacked(output, parts[9], parts[10], parts[11], parts[12], parts[13], parts[14], parts[15], parts[16], parts[17], parts[18]));
-
+        output = string(abi.encodePacked(output, parts[19], parts[20], parts[21]));
+        
         string memory json = Base64.encode(bytes(string(abi.encodePacked('{"name": "Halo 3 Profile #', toString(tokenId), '", "description": "An homage to the greatest multiplayer game of all time.", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(output)), '"}'))));
         output = string(abi.encodePacked('data:application/json;base64,', json));
 
