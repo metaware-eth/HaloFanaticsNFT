@@ -1,6 +1,6 @@
 ## About The Project
 
-This project is an example ERC721 NFT contract for the Ethereum network. The token uses SVG to render its data
+This project is an example ERC721 NFT contract for the Ethereum network. The token uses SVG to render its data. Tested with Hardhat and Chai Assertions
 
 ### Built With
 
@@ -31,4 +31,5 @@ npx hardhat test
 ```
 
 ### Sample Deployment Links
-* https://rinkeby.etherscan.io/address/0x651cc7cec28860e9c4163c0c5e6fa6148f78cd26#code
+* [Rinkeby Contract](https://rinkeby.etherscan.io/address/0x651cc7cec28860e9c4163c0c5e6fa6148f78cd26#code)
+* [OpenSea Collection](https://testnets.opensea.io/)
