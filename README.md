@@ -28,7 +28,7 @@ npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffl
 ```sh
 npx hardhat compile
 npx hardhat test
-```sh
+```
 
 ### Sample Deployment Links
 * https://rinkeby.etherscan.io/address/0x651cc7cec28860e9c4163c0c5e6fa6148f78cd26#code
