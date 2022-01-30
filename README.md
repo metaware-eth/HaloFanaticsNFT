@@ -25,17 +25,16 @@ The following techs were used in development
 ### Prerequisites
 
 You'll need to install the following to run locally
-* npm
-  ```sh
-  # NPM
-  npm install npm@latest -g
-  npm init --yes
-  
-  # Hardhat
-  npm install --save-dev hardhat
-  npx hardhat
-  npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
-  ```
+```sh
+# NPM
+npm install npm@latest -g
+npm init --yes
+
+# Hardhat
+npm install --save-dev hardhat
+npx hardhat
+npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
+```
 
 ### Run
 
