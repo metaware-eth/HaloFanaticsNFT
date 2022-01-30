@@ -1223,7 +1223,7 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
 
 contract Halo3Profile is ERC721Enumerable, ReentrancyGuard, Ownable {
     mapping(uint => string) private gamertags;
-    bool public _paused = true;
+    bool private _paused = true;
     uint private _tokenId = 1;
 
     string[] private weapon = [
@@ -1466,6 +1466,10 @@ contract Halo3Profile is ERC721Enumerable, ReentrancyGuard, Ownable {
     function setPause(bool _pause) public {
         require(msg.sender == owner(), "Only owner can modify pause");
         _paused = _pause;
+    }
+
+    function getPause() public view returns (bool) {
+        return _paused;
     }
 
     function toString(uint256 value) internal pure returns (string memory) {
