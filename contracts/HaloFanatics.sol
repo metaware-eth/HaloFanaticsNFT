@@ -1444,7 +1444,7 @@ contract Halo3Profile is ERC721Enumerable, ReentrancyGuard, Ownable {
         parts[17] = getRank(tokenId);
         parts[18] = '</text><text x="10" y="180" class="base">';
         parts[19] = getMedal(tokenId);
-        parts[20] = '</svg>';
+        parts[20] = '</text></svg>';
         string memory output = string(abi.encodePacked(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6], parts[7], parts[8]));
         output = string(abi.encodePacked(output, parts[9], parts[10], parts[11], parts[12], parts[13], parts[14], parts[15], parts[16], parts[17], parts[18]));
         output = string(abi.encodePacked(output, parts[19], parts[20]));
