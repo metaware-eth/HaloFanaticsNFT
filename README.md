@@ -1,3 +1,4 @@
+# HaloFanaticsNFT
 ## About The Project
 
 This project is an example ERC721 NFT contract for the Ethereum network. The token uses SVG to render its data. Tested with Hardhat and Chai Assertions.
