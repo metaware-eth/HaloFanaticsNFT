@@ -66,9 +66,9 @@ let addr2;
       }
 
       await expect(haloFanatics.connect(owner).mint(GAMERTAG))
-      .to
-      .be
-      .revertedWith("Collection is Sold Out")
+        .to
+        .be
+        .revertedWith("Collection is Sold Out")
     });     
   });      
 });
