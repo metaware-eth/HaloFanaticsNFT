@@ -32,5 +32,5 @@ npx hardhat test
 ```
 
 ### Sample Deployment Links
-* [Rinkeby Contract](https://rinkeby.etherscan.io/address/0x651cc7cec28860e9c4163c0c5e6fa6148f78cd26#code)
-* [OpenSea Collection](https://testnets.opensea.io/)
+* [Rinkeby Contract](https://rinkeby.etherscan.io/address/0x60721a0614ed2e5e1dfb98b06c52887e4cb11af8#code)
+* [OpenSea Collection](https://testnets.opensea.io/collection/halo-3-profile-test)
